@@ -7,24 +7,13 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Box, Grid } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-function App() {
-  const [selectedTab, setSelectedTab] = useState(0);
-
-  const handleChange = (event, newValue) => {
-    setSelectedTab(newValue);
-  }
-  const [selectedTabb, setSelectedTabb] = useState(0);
-
-  const handleChangee = (event, newValue) => {
-    setSelectedTabb(newValue);
-  }
-
+function Navbar() {
   return (
     <AppBar position="static" sx={{ backgroundColor: 'white', color: '#333948' }}>
       <Toolbar>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', marginLeft:'3cm'}}>
               <Typography variant="h6" sx={{ flexGrow: 0 }}>
-                <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" style={{ height: '80px', marginRight: '10px', marginTop: '10px' }} />
+                <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" style={{ height: '70px', marginRight: '10px', marginTop: '10px' }} />
               </Typography>
               <Tabs
                 textColor="inherit"
@@ -35,25 +24,21 @@ function App() {
                   '& .MuiTabs-indicator': {
                     backgroundColor: '#DC6A1A', // Custom underline color
                   },}}
-                value={selectedTab}
-                onChange={handleChange}
                 
               >
-                <Tab label="Windows" sx={{":hover":{color: '#DC6A1A'}}} />
-                <Tab label="Doors & Porches"  sx={{":hover":{color: '#DC6A1A'}}}/>
-                <Tab label="Conservatories" sx={{":hover":{color: '#DC6A1A'}}} />
-                <Tab label="Roomfit" sx={{":hover":{color: '#DC6A1A'}}} />
+                <Tab label="Windows" sx={{":hover":{color: '#DC6A1A',borderBottom: '2px solid #DC6A1A',}}} />
+                <Tab label="Doors & Porches"  sx={{":hover":{color: '#DC6A1A',borderBottom: '2px solid #DC6A1A'}}}/>
+                <Tab label="Conservatories" sx={{":hover":{color: '#DC6A1A',borderBottom: '2px solid #DC6A1A'}}} />
+                <Tab label="Roomfit" sx={{":hover":{color: '#DC6A1A',borderBottom: '2px solid #DC6A1A'}}} />
               </Tabs>
             </Box>
-            <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-end' }, alignItems: 'center', flexWrap: 'wrap', marginLeft: 'auto' }}>
+            <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-end' }, alignItems: 'center', flexWrap: 'wrap', marginLeft: 'auto', marginRight: '3cm' }}>
             <Tabs
               aria-label="navigation tabs"
               textColor="inherit"
               indicatorColor="primary"
               variant="scrollable"
               scrollButtons="auto"
-              value={selectedTabb}
-              onChange={handleChangee}
               sx={{
             flexGrow: 1,
             '& .MuiTabs-indicator': {
@@ -61,8 +46,8 @@ function App() {
             },
           }}
             >
-              <Tab label="About"  sx={{":hover":{color: '#DC6A1A'}}}/>
-              <Tab label="Support" sx={{":hover":{color: '#DC6A1A'}}} />
+              <Tab label="About"  sx={{":hover":{color: '#DC6A1A',borderBottom: '2px solid #DC6A1A'}}}/>
+              <Tab label="Support" sx={{":hover":{color: '#DC6A1A',borderBottom: '2px solid #DC6A1A'}}} />
             </Tabs>
             
             <Box>
@@ -73,7 +58,7 @@ function App() {
               9am–6pm Mon–Sun
             </Typography>
             </Box>
-              <Button variant="contained" sx={{background: '#65B44B', borderRadius: '50px', width: '5cm',":hover":{background: '#57AD50'}}}>
+              <Button variant="contained" size="large" sx={{background: '#65B44B', borderRadius: '50px',height: '1.3cm',width: '7cm',":hover":{background: '#57AD50'}}}>
               <Typography sx={{ textAlign: 'left', width: '100%',marginLeft: '4px' }}>
               Get Price
             </Typography>
@@ -85,5 +70,9 @@ function App() {
     </AppBar>
   );
 }
-
+function App(){
+  return(
+    <Navbar />
+  )
+}
 export default App;
