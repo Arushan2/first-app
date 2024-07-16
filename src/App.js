@@ -7,8 +7,12 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Box, Grid } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
+import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
+import CurrencyPoundTwoToneIcon from '@mui/icons-material/CurrencyPoundTwoTone';
 function Navbar() {
   return (
+    <>
     <AppBar position="static" sx={{ backgroundColor: 'white', color: '#333948' }}>
       <Toolbar>
               <Box sx={{ display: 'flex', alignItems: 'center', marginLeft:'3cm'}}>
@@ -16,7 +20,7 @@ function Navbar() {
                 <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" style={{ height: '70px', marginRight: '10px', marginTop: '10px' }} />
               </Typography>
               <Tabs
-                textColor="inherit"
+                textColor="'#434956'"
                 indicatorColor="primary"
                 variant="scrollable"
                 scrollButtons="auto"
@@ -67,9 +71,29 @@ function Navbar() {
             </Box>
           
       </Toolbar>
+      <Toolbar sx={{backgroundColor:'#f2f1ef',minHeight: '48px' }}>
+        <Box sx={{ display: 'flex',  margin: 'auto' }}>
+          <Typography sx={{margin:'auto'}}>10 year guaranteeGuarantee </Typography><WorkspacePremiumRoundedIcon fontSize="medium"></WorkspacePremiumRoundedIcon></Box>
+        <Box sx={{ display: 'flex',  margin: 'auto' }}>
+          <Typography sx={{margin:'auto'}}>Made in Britain</Typography><ShuffleRoundedIcon></ShuffleRoundedIcon></Box>
+        <Box sx={{ display: 'flex',  margin: 'auto' }}>  
+          <Typography sx={{margin:'auto', marginRight:'1px'}}>55+ years in business </Typography><img src={`${process.env.PUBLIC_URL}/55 years grey.svg`} alt="55 years"></img></Box>
+        <Box sx={{ display: 'flex',  margin: 'auto' }}>
+          <Typography sx={{margin:'auto'}}>We'll match uPVC window prices</Typography><CurrencyPoundTwoToneIcon></CurrencyPoundTwoToneIcon></Box>
+    </Toolbar>
+      <Toolbar sx={{backgroundColor:"#233657"}}>
+      <Box display="flex" flexGrow={1} justifyContent="center">
+          <Typography variant="h6" component="div" color="white">
+            ANGLIAN HOME IMPROVEMENTS – THE UK'S NO. 1 HOME IMPROVEMENT PROVIDER
+          </Typography>
+      </Box>
+      </Toolbar>
     </AppBar>
+    
+    </>
   );
 }
+
 function App(){
   return(
     <Navbar />
