@@ -71,7 +71,7 @@ function Navbar() {
             </Box>
           
       </Toolbar>
-      <Toolbar sx={{backgroundColor:'#f2f1ef',minHeight: '48px' }}>
+      <Toolbar sx={{ backgroundColor: '#f2f1ef',minHeight: '50px !important',  }}>
         <Box sx={{ display: 'flex',  margin: 'auto' }}>
           <Typography sx={{margin:'auto'}}>10 year guaranteeGuarantee </Typography><WorkspacePremiumRoundedIcon fontSize="medium"></WorkspacePremiumRoundedIcon></Box>
         <Box sx={{ display: 'flex',  margin: 'auto' }}>
@@ -81,7 +81,7 @@ function Navbar() {
         <Box sx={{ display: 'flex',  margin: 'auto' }}>
           <Typography sx={{margin:'auto'}}>We'll match uPVC window prices</Typography><CurrencyPoundTwoToneIcon></CurrencyPoundTwoToneIcon></Box>
     </Toolbar>
-      <Toolbar sx={{backgroundColor:"#233657"}}>
+      <Toolbar sx={{backgroundColor:"#233657",minHeight: '50px !important'}}>
       <Box display="flex" flexGrow={1} justifyContent="center">
           <Typography variant="h6" component="div" color="white">
             ANGLIAN HOME IMPROVEMENTS – THE UK'S NO. 1 HOME IMPROVEMENT PROVIDER
@@ -94,9 +94,27 @@ function Navbar() {
   );
 }
 
+function HomeWallpaper(){
+  return(
+    <>
+    <Box component={'img'}
+    sx={{height:'100%',
+      width: '100%'
+    }}
+    alt="wallPaper"
+    src={`${process.env.PUBLIC_URL}/home page.webp`}>
+    
+    </Box>
+    </>
+  )
+}
+
 function App(){
   return(
+    <div>
     <Navbar />
+    <HomeWallpaper />
+    </div>
   )
 }
 export default App;
