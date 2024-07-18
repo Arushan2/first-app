@@ -10,6 +10,14 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
 import CurrencyPoundTwoToneIcon from '@mui/icons-material/CurrencyPoundTwoTone';
+import styled from '@mui/material/styles/styled';
+const Mybutton = styled (Button)({
+  background: '#65B44B',
+   borderRadius: '50px',
+   height: '1.3cm',
+   width: '7cm',
+   ":hover":{background: '#57AD50'}
+})
 function Navbar() {
   return (
     <>
@@ -62,12 +70,12 @@ function Navbar() {
               9am–6pm Mon–Sun
             </Typography>
             </Box>
-              <Button variant="contained" size="large" sx={{background: '#65B44B', borderRadius: '50px',height: '1.3cm',width: '7cm',":hover":{background: '#57AD50'}}}>
+              {/*Starting*/}
               <Typography sx={{ textAlign: 'left', width: '100%',marginLeft: '4px' }}>
               Get Price
             </Typography>
             <ArrowForwardIosIcon></ArrowForwardIosIcon>
-              </Button>
+              {/* Ending */}
             </Box>
           
       </Toolbar>
